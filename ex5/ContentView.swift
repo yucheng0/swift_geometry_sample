@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack{
+//        Text("Hello, World!")
+            DIYRectangle()
+        }
+  //          .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
     }
 }
 
@@ -20,3 +24,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+struct DIYRectangle:View {  
+    var body: some View{
+    GeometryReader {geometry in Rectangle()
+        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+        .frame(width:geometry.size.width * 0.3 ,height: geometry.size.height * 0.8 , alignment:.center)
+    }
+    }
+}
+
